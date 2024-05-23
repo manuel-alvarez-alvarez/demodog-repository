@@ -2,7 +2,7 @@
 
 set -eu
 
-readonly BASE_IMAGE_NAME="ghcr.io/manuel-alvarez-alvarez/demodog-"
+readonly BASE_IMAGE_NAME="ghcr.io/manuel-alvarez-alvarez/demodog"
 
 # Use buildkit to match CI as closely as possible.
 export DOCKER_BUILDKIT=1
@@ -14,7 +14,7 @@ GIT_HEAD_REF="$(git show-ref --head --hash ^HEAD)"
 do_build() {
   image=$1
   docker buildx build \
-    --platform linux/amd64 \
+    --platform linux/amd64,linux/arm64 \
     --label org.opencontainers.image.created="$BUILD_DATE" \
     --label org.opencontainers.image.source=https://github.com/manuel-alvarez-alvarez/demodog-repository \
     --label org.opencontainers.image.revision="$GIT_HEAD_REF" \
