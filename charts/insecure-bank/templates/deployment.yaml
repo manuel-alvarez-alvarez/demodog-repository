@@ -18,11 +18,3 @@ spec:
           image: ghcr.io/manuel-alvarez-alvarez/demodog-insecure-bank:latest
           ports:
             - containerPort: 8080
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
