@@ -20,8 +20,7 @@ do_build() {
     --label org.opencontainers.image.revision="$GIT_HEAD_REF" \
     --push \
     --tag "$BASE_IMAGE_NAME-$image:latest" \
-    --file "./images/$image/Dockerfile" \
-    ./catalog
+    "./images/$image"
 }
 
 do_build "insecure-bank"
