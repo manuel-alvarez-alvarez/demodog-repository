@@ -16,7 +16,6 @@ spec:
       containers:
         - name: insecure-bank
           image: ghcr.io/manuel-alvarez-alvarez/demodog-insecure-bank:latest
-          command: ['insecure-bank']
           ports:
             - containerPort: 8080
           livenessProbe:
