@@ -1,0 +1,6 @@
+services:
+
+  insecure-bank:
+    image: insecure-bank/test
+    build: .
+

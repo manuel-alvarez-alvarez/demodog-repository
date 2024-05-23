@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: insecure-bank
+  namespace: demodog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: insecure-bank
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: insecure-bank
+    spec:
+      containers:
+        - name: insecure-bank
+          image: ghcr.io/manuel-alvarez-alvarez/demodog-insecure-bank:latest
+          command: ['insecure-bank']
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
