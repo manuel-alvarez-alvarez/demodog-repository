@@ -3,6 +3,20 @@ entries:
   insecure-bank:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-05-23T04:38:07.958603926Z"
+    description: A purposely insecure banking application to test vulnerability detection
+    digest: 26296b4bae546ab908bcafe8b62f7e9a785094f5a1b67d07f34980b6880e0180
+    keywords:
+    - team:asm
+    - language:java
+    - deployment:insecure-bank
+    name: insecure-bank
+    type: application
+    urls:
+    - https://github.com/manuel-alvarez-alvarez/demodog-repository/releases/download/insecure-bank-0.0.2/insecure-bank-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-05-23T00:51:02.31418412Z"
     description: A purposely insecure banking application to test vulnerability detection
     digest: eef14947669cb67a5d63d5ec0687d3eeecba56b332034fb1fa0cf1d843548b9a
@@ -15,4 +29,4 @@ entries:
     urls:
     - https://github.com/manuel-alvarez-alvarez/demodog-repository/releases/download/insecure-bank-0.0.1/insecure-bank-0.0.1.tgz
     version: 0.0.1
-generated: "2024-05-23T00:51:02.314225517Z"
+generated: "2024-05-23T04:38:07.958610117Z"
