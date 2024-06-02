@@ -12,7 +12,7 @@ BUILD_DATE="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 GIT_HEAD_REF="$(git show-ref --head --hash ^HEAD)"
 
 do_build() {
-  image=$1
+  folder=$1 image=$2
   docker buildx build \
     --platform linux/amd64,linux/arm64 \
     --label org.opencontainers.image.created="$BUILD_DATE" \
@@ -20,7 +20,8 @@ do_build() {
     --label org.opencontainers.image.revision="$GIT_HEAD_REF" \
     --push \
     --tag "$BASE_IMAGE_NAME-$image:latest" \
-    "./images/$image"
+    "$folder"
 }
 
-do_build "insecure-bank"
+do_build "./images/insecure-bank/showcase" "insecure-bank-showcase"
+do_build "./images/insecure-bank/tutorial" "insecure-bank-tutorial"

@@ -1,6 +1,14 @@
 services:
 
-  insecure-bank:
-    image: insecure-bank/test
-    build: .
+  insecure-bank-showcase:
+    image: ghcr.io/manuel-alvarez-alvarez/demodog-insecure-bank-showcase:latest
+    build: ./showcase
+    ports:
+      - 9090:8080
+
+  insecure-bank-tutorial:
+    image: ghcr.io/manuel-alvarez-alvarez/demodog-insecure-bank-tutorial:latest
+    build: ./tutorial
+    ports:
+      - 9191:80
 

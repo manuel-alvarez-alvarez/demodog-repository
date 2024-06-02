@@ -1,20 +1,49 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: insecure-bank
+  name: insecure-bank-showcase
   namespace: demodog
+  labels:
+    app.kubernetes.io/name: insecure-bank-showcase
+    app.demodog.com/release: insecure-bank
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: insecure-bank
+      app.kubernetes.io/name: insecure-bank-showcase
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: insecure-bank
+        app.kubernetes.io/name: insecure-bank-showcase
+        app.demodog.com/release: insecure-bank
     spec:
       containers:
-        - name: insecure-bank
-          image: ghcr.io/manuel-alvarez-alvarez/demodog-insecure-bank:latest
+        - name: insecure-bank-showcase
+          image: ghcr.io/manuel-alvarez-alvarez/demodog-insecure-bank-showcase:latest
           ports:
             - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: insecure-bank-tutorial
+  namespace: demodog
+  labels:
+    app.kubernetes.io/name: insecure-bank-tutorial
+    app.demodog.com/release: insecure-bank
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: insecure-bank-tutorial
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: insecure-bank-tutorial
+        app.demodog.com/release: insecure-bank
+    spec:
+      containers:
+        - name: insecure-bank-tutorial
+          image: ghcr.io/manuel-alvarez-alvarez/demodog-insecure-bank-tutorial:latest
+          ports:
+            - containerPort: 80
