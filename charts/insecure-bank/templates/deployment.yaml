@@ -5,7 +5,7 @@ metadata:
   namespace: demodog
   labels:
     app.kubernetes.io/name: insecure-bank-showcase
-    app.demodog.com/release: insecure-bank
+    demodog.release: insecure-bank
 spec:
   replicas: 1
   selector:
@@ -15,7 +15,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: insecure-bank-showcase
-        app.demodog.com/release: insecure-bank
+        demodog.release: insecure-bank
     spec:
       containers:
         - name: insecure-bank-showcase
@@ -30,7 +30,7 @@ metadata:
   namespace: demodog
   labels:
     app.kubernetes.io/name: insecure-bank-tutorial
-    app.demodog.com/release: insecure-bank
+    demodog.release: insecure-bank
 spec:
   replicas: 1
   selector:
@@ -40,7 +40,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: insecure-bank-tutorial
-        app.demodog.com/release: insecure-bank
+        demodog.release: insecure-bank
     spec:
       containers:
         - name: insecure-bank-tutorial

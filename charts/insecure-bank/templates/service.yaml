@@ -3,8 +3,8 @@ kind: Service
 metadata:
   name: insecure-bank-showcase-lb
   labels:
-    app.demodog.com/type: showcase
-    app.demodog.com/release: insecure-bank
+    demodog.type: showcase
+    demodog.release: insecure-bank
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local
@@ -20,8 +20,8 @@ kind: Service
 metadata:
   name: insecure-bank-tutorial-lb
   labels:
-    app.demodog.com/type: tutorial
-    app.demodog.com/release: insecure-bank
+    demodog.type: tutorial
+    demodog.release: insecure-bank
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local
