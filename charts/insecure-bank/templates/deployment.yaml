@@ -16,6 +16,8 @@ spec:
       labels:
         app.kubernetes.io/name: insecure-bank-showcase
         demodog.release: insecure-bank
+      annotations:
+        admission.datadoghq.com/java-lib.version: "latest"
     spec:
       containers:
         - name: insecure-bank-showcase

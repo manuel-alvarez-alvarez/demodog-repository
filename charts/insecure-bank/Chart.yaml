@@ -2,7 +2,7 @@ apiVersion: v2
 name: insecure-bank
 description: A purposely insecure banking application to test vulnerability detection
 type: application
-version: 0.0.4
+version: 0.0.5
 appVersion: 1.0.0
 keywords:
   - team:asm
